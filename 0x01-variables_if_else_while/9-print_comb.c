@@ -1,4 +1,3 @@
-CLion
 #include <stdio.h>
 /**
   * main - The entry point of C programs
