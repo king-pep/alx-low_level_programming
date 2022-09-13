@@ -7,7 +7,7 @@
   * integer.
   * Return: abs_val
   */
-int _abs(int n)
+int _abs(int x)
 {
 	int abs_val;
 
