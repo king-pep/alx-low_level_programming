@@ -1,51 +1,41 @@
 #include "main.h"
+
 /**
-  * times_table - The entry point of the function
-  * @void: The function takes no parameters
-  *
-  * Description: This is a function that prints the 9 times table, starting
-  * with 0.
-  */
+ * times_table - prints times table up to 9
+ *
+ * Return: void
+ *
+ **/
+
 void times_table(void)
 {
-	int firstnum, secondnum, multiplication_result;
+	int y, x, prod;
 
-	firstnum = 0;
-	while (firstnum < 10)
+	prod = 0;
+
+	for (y = 0; y <= 9; y++)
 	{
-		secondnum = 0;
-		while (secondnum < 10)
+		for (x = 0; x <= 9; x++)
 		{
-			multiplication_result = firstnum * secondnum;
-			if (secondnum != 9)
+			prod = y * x;
+			if (x != 0)
 			{
-				if ((multiplication_result / 10) == 0)
-				{
-					_putchar(multiplication_result + '0');
-					_putchar(',');
-					_putchar(' ');
-				}
-				else
-				{
-					_putchar((multiplication_result / 10) + '0');
-					_putchar((multiplication_result % 10) + '0');
-					_putchar(',');
-					_putchar(' ');
-				}
+				_putchar(',');
+				_putchar(' ');
+			}
+			if (prod >= 10)
+			{
+				_putchar((prod / 10) + '0');
+				_putchar((prod % 10) + '0');
+			}
+			else if ((prod < 10) && (x != 0))
+			{
+				_putchar(' ');
+				_putchar((prod % 10) + '0');
 			}
 			else
-			{
-				if ((multiplication_result / 10) == 0)
-					_putchar(multiplication_result + '0');
-				else
-				{
-					_putchar((multiplication_result / 10) + '0');
-					_putchar((multiplication_result % 10) + '0');
-				}
-			}
-			secondnum++;
+				_putchar((prod % 10) + '0');
 		}
-		firstnum++;
 		_putchar('\n');
 	}
 }
